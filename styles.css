@@ -1,0 +1,380 @@
+* {
+  margin: 0 !important;
+  padding: 0 !important;
+  box-sizing: border-box !important;
+}
+
+html,
+body {
+  width: 100% !important;
+  height: 100% !important;
+  overflow: hidden !important;
+  font-family: "Inter", sans-serif !important;
+  background-color: #00040f !important;
+  color: white !important;
+}
+
+body {
+  transition: transform 0.3s ease-out !important;
+  overscroll-behavior-y: contain !important;
+}
+
+.phone-ui img,
+.background-vector {
+  will-change: transform;
+  backface-visibility: hidden;
+  contain: layout paint;
+}
+.container {
+  max-width: 1440px !important;
+  margin: 0 auto !important;
+  width: 100% !important;
+  padding: 0 20px !important;
+}
+header {
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  max-width: 1320px !important;
+  width: 100% !important;
+  margin: 20px auto !important;
+  padding: 20px !important;
+}
+
+.logo {
+  font-size: 24px !important;
+  font-weight: bold !important;
+}
+
+.discord-link {
+  color: white !important;
+  text-decoration: none !important;
+  cursor: pointer !important;
+}
+
+.hero-text {
+  width: 100% !important;
+  max-width: 900px !important;
+  margin: 60px auto !important;
+  text-align: center !important;
+  padding: 0 20px !important;
+}
+
+.hero-text h1 {
+  font-size: clamp(2rem, 5vw, 2.8rem) !important;
+  font-weight: 700 !important;
+}
+
+.hero-text p {
+  font-size: 20px !important;
+  margin-top: 20px !important;
+  letter-spacing: 1px !important;
+  color: #f9f9f9 !important;
+
+  min-height: 60px !important;
+}
+
+.hero-text p,
+.subtext,
+.call-button {
+  -webkit-font-smoothing: antialiased !important;
+  backface-visibility: hidden !important;
+  transform: translateZ(0) !important;
+  will-change: transform !important;
+}
+
+.call-button,
+.subtext {
+  position: relative !important;
+}
+
+.call-button svg {
+  flex-shrink: 0 !important;
+  backface-visibility: hidden !important;
+  transform: translateZ(0) !important;
+}
+
+.phone-viewport {
+  position: fixed !important;
+  bottom: 0 !important;
+  left: 0 !important;
+  width: 100% !important;
+  height: 68vh !important;
+  overflow: hidden !important;
+  z-index: 3 !important;
+}
+
+.phone-ui img {
+  width: 700px !important;
+  height: auto !important;
+  transform: translateY(5%) !important;
+  display: block !important;
+  margin: 0 auto !important;
+}
+.form-container {
+  background-color: #070707 !important;
+  padding: 24px !important;
+  border-radius: 28px !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4) !important;
+  width: 565px !important;
+  position: fixed !important;
+  bottom: 52px !important;
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+  z-index: 4 !important;
+}
+
+form {
+  width: 100% !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  gap: 12px !important;
+}
+
+input[type="tel"] {
+  padding: 20px !important;
+  width: 95% !important;
+  height: 100px !important;
+  border-radius: 16px !important;
+  font-size: 24px !important;
+  background-color: #e3e3e3 !important;
+  color: #333 !important;
+  text-align: center !important;
+  outline: none !important;
+  border: 2px solid transparent !important;
+}
+
+.subtext {
+  color: #737373 !important;
+  min-height: 24px !important;
+}
+
+button {
+  width: 60% !important;
+  padding: 24px 20px !important;
+  border: none !important;
+  border-radius: 16px !important;
+  background-color: #0066d6 !important;
+  color: white !important;
+  font-size: 16px !important;
+  font-weight: 500 !important;
+  cursor: pointer !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 8px !important;
+}
+
+.background-vector {
+  position: fixed !important;
+  bottom: -200px !important;
+  left: 0 !important;
+  width: 100vw !important;
+  height: auto !important;
+  z-index: 1 !important;
+  opacity: 1 !important;
+}
+
+@media (max-width: 1881px) {
+  .form-container {
+    width: 500px !important;
+    bottom: 20px !important;
+  }
+
+  input[type="tel"] {
+    height: 75px !important;
+    font-size: 18px !important;
+    padding: 12px !important;
+  }
+
+  .subtext {
+    font-size: 14px !important;
+  }
+
+  button {
+    width: 55% !important;
+    padding: 18px !important;
+    font-size: 15px !important;
+    gap: 6px !important;
+  }
+}
+
+@media (max-width: 1600px) {
+  .hero-text {
+    width: 95% !important;
+    margin: 50px auto !important;
+  }
+  .hero-text h1 {
+    font-size: clamp(1.8rem, 6vw, 2.5rem) !important;
+  }
+  .hero-text p {
+    font-size: 18px !important;
+  }
+
+  .phone-ui img {
+    max-width: 600px !important;
+    transform: translateY(5%) !important;
+  }
+
+  .form-container {
+    width: 450px !important;
+    bottom: 45px !important;
+  }
+
+  button {
+    padding: 16px !important;
+  }
+
+  .background-vector {
+    bottom: -50px !important;
+  }
+}
+@media (max-width: 1000px) {
+  .background-vector {
+    bottom: 0px !important;
+  }
+}
+
+@media (max-width: 700px) {
+  .hero-text p {
+    font-size: 16px !important;
+  }
+
+  .background-vector {
+    width: 150vw !important;
+    transform: rotate(-16deg);
+    left: -150px !important;
+    bottom: 50px !important;
+  }
+}
+
+@media (max-width: 650px) {
+  .hero-text {
+    width: 90% !important;
+  }
+  .hero-text h1 {
+    font-size: clamp(1.8rem, 6vw, 2.3rem) !important;
+  }
+
+  .phone-ui img {
+    max-width: 500px !important;
+  }
+
+  .form-container {
+    width: 410px !important;
+    bottom: 115px !important;
+  }
+
+  .subtext {
+    min-height: 18px !important;
+  }
+}
+
+@media (max-width: 535px) {
+  .hero-text {
+    width: 80% !important;
+  }
+  .hero-text h1 {
+    font-size: clamp(1.8rem, 6vw, 2rem) !important;
+  }
+
+  .phone-ui img {
+    max-width: 450px !important;
+  }
+
+  .form-container {
+    width: 360px !important;
+    bottom: 150px !important;
+  }
+
+  input[type="tel"] {
+    padding: 10px !important;
+    height: 65px !important;
+    font-size: 16px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-text h1 {
+    font-size: clamp(1.8rem, 6vw, 1.8rem) !important;
+  }
+  .phone-ui img {
+    max-width: 400px !important;
+  }
+
+  .form-container {
+    width: 320px !important;
+    bottom: 150px !important;
+  }
+
+  button {
+    width: 80% !important;
+  }
+
+  .subtext {
+    min-height: 14px !important;
+  }
+}
+
+@media (max-width: 430px) {
+  .logo {
+    font-size: 20px !important;
+  }
+
+  .discord-link {
+    font-size: 15px !important;
+  }
+
+  .hero-text {
+    margin: 40px !important;
+  }
+
+  .hero-text h1 {
+    font-size: clamp(1.6rem, 6vw, 1.5rem) !important;
+  }
+  .hero-text p {
+    font-size: 14px !important;
+  }
+  .phone-ui img {
+    max-width: 370px !important;
+    transform: translateY(17%) !important;
+  }
+
+  .form-container {
+    width: 300px !important;
+    bottom: 40px !important;
+  }
+
+  .background-vector {
+    width: 220vw !important;
+    transform: rotate(-20deg) !important;
+    bottom: 100px !important;
+    opacity: 0.8 !important;
+  }
+}
+
+@media (max-width: 395px) {
+  .phone-ui img {
+    max-width: 340px !important;
+    transform: translateY(25%) !important;
+  }
+
+  .form-container {
+    width: 265px !important;
+    padding: 10px 16px 9px 16px !important;
+    bottom: 0px !important;
+  }
+
+  input[type="tel"] {
+    padding: 8px !important;
+    height: 44px !important;
+    font-size: 14px !important;
+  }
+
+  button {
+    width: 75% !important;
+    padding: 12px !important;
+    font-size: 13px !important;
+  }
+}

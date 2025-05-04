@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no"
+    />
+
+    <title>BruinPad Landing</title>
+    <link
+      rel="icon"
+      href="./assets/favicon-bruinpad.svg"
+      type="image/svg+xml"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <div class="bg">
+      <!-- Navbar -->
+      <div class="navbar">
+        <div class="nav-text">BruinPad.com</div>
+        <div class="nav-text right">
+          <a
+            href="https://discord.gg/A9YvrEjJ6Z"
+            class="discord-link"
+            target="_blank"
+            >Discord</a
+          >
+        </div>
+      </div>
+
+      <!-- Ellipses -->
+      <img
+        src="./assets/Ellipse_5.png"
+        alt="middle ellipse"
+        class="ellipse middle"
+      />
+      <img
+        src="./assets/Ellipse_6.png"
+        alt="left ellipse"
+        class="ellipse left"
+      />
+
+      <!-- Main Content -->
+      <div class="content">
+        <h1>Your UCLA housing Assistant</h1>
+        <p>
+          We’ll call you, just give us your desired price range, apartment
+          specs, and <br />
+          we’ll handle the rest.
+        </p>
+
+        <div class="phone-ui">
+          <img src="./assets/Star.png" alt="Wave graphic" class="wave" />
+          <div class="phone-wrapper">
+            <img src="./assets/Iphone.png" alt="Phone" class="phone" />
+            <div class="inside-phone">
+              <div class="input-container">
+                <label for="phone">Phone number</label>
+                <div class="phone-input-container">
+                  <div class="flag-wrapper">
+                    <img
+                      src="https://flagcdn.com/us.svg"
+                      alt="US Flag"
+                      class="flag"
+                    />
+                    <span class="down-arrow">▼</span>
+                  </div>
+                  <input
+                    type="text"
+                    id="phone"
+                    placeholder="Enter your phone number"
+                  />
+                </div>
+                <div class="note">We'll call you right away</div>
+              </div>
+              <div class="call-button-container">
+                <button class="call-button">
+                  Call me <i class="fas fa-phone"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      // document.addEventListener(
+      //   "touchmove",
+      //   function (e) {
+      //     if (window.innerHeight <= document.body.offsetHeight) {
+      //       e.preventDefault();
+      //     }
+      //   },
+      //   { passive: false }
+      // );
+
+      // Add event listener for the call button
+      document
+        .querySelector(".call-button")
+        .addEventListener("click", function () {
+          const phoneNumber = document.getElementById("phone").value;
+          if (phoneNumber) {
+            console.log("Sending phone number:", phoneNumber); // Debug log
+
+            // Send data to Google Sheet with updated URL
+            fetch(
+              "https://script.google.com/macros/s/AKfycbyLnx3OFz2gR_fWXBApUGuq5x2HYBJuLevEePJHQeMxrBfFSGxRZ1iZFBXwcRNd5xnU/exec",
+              {
+                method: "POST",
+                mode: "no-cors",
+                headers: {
+                  "Content-Type": "application/json",
+                },
+                body: JSON.stringify({ phoneNumber: phoneNumber }),
+              }
+            )
+              .then((response) => {
+                console.log("Response received"); // Debug log
+                alert("Thanks! We will call you shortly.");
+                document.getElementById("phone").value = "";
+              })
+              .catch((error) => {
+                console.error("Error:", error);
+                alert(
+                  "There was an error submitting your number. Please try again."
+                );
+              });
+          } else {
+            alert("Please enter your phone number");
+          }
+        });
+    </script>
+  </body>
+</html>
